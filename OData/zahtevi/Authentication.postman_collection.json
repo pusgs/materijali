@@ -1,0 +1,75 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Authentication",
+		"_postman_id": "09e86747-14c1-bb78-e0d5-1acbc47548ed",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:54042/oauth/token",
+			"request": {
+				"url": "http://localhost:54042/oauth/token",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "appu",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "appu",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Get the token."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:54042/api/AppUsersWA2/1",
+			"request": {
+				"url": "http://localhost:54042/api/AppUsersWA2/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer  eyJ0eXAiOiJKV1QiLCJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiJ9.eyJuYW1laWQiOiJhZG1pbiIsInVuaXF1ZV9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL2FjY2Vzc2NvbnRyb2xzZXJ2aWNlLzIwMTAvMDcvY2xhaW1zL2lkZW50aXR5cHJvdmlkZXIiOiJBU1AuTkVUIElkZW50aXR5IiwiQXNwTmV0LklkZW50aXR5LlNlY3VyaXR5U3RhbXAiOiI2YTcwZjhlYi1jZjZlLTRmOGYtYTJlYy1hMDQ3OWE0YTA1MmEiLCJyb2xlIjoiQWRtaW4iLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjU0MDQyIiwiYXVkIjoiYldsc1lYTm9hVzQ9IiwiZXhwIjoxNDk2Njk4OTYzLCJuYmYiOjE0OTY2MTI1NjN9.m3WKqUbmrq3PjlBoZNWcKFpoCPnE67oJ0eYkk9r4r1K9KNYCa5qfhIRN2ISKJWsdxnS21JSOmSfyy79x4aiDLw",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"Id\": 1,\n  \"FullName\": \"Admin Adminovicc\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
