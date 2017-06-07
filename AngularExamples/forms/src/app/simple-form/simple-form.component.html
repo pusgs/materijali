@@ -1,7 +1,7 @@
 <button (click)="toggle()">{{isVisible ? "Hide": "Show" }}</button>
 <div *ngIf="isVisible">
   <h1>Add product</h1>
-  <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f.value, f)">
     <div>
       <label for="Name">Name</label>
       <input type="text" name="Name" ngModel>
@@ -19,3 +19,6 @@
     {{product.Name}}, {{product.Price}}
   </li>
 </ul>
+<h3>Two-way data binding example</h3>
+<input type="text" [(ngModel)]="twdbData" />
+<p>Value: {{twdbData}}</p>
