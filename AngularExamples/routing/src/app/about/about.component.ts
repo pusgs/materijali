@@ -11,11 +11,15 @@ import {
 export class AboutComponent implements OnInit {
   Id: string = "-1";
 
-  constructor(private route: ActivatedRoute) {
-    route.params.subscribe(params => {this.Id = params["Id"]});
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+    activatedRoute.params.subscribe(params => {this.Id = params["Id"]});
    }
 
   ngOnInit() {
+  }
+
+  goHome(){
+    this.router.navigate(['/home']);
   }
 
 }
