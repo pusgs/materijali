@@ -1,0 +1,221 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Odata",
+		"_postman_id": "eebff6d8-cabd-638f-d1c9-fd52dbaf0097",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3367/api/Products?$filter=Id eq 2",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3367/api/Products?$filter=Id eq 2",
+					"protocol": "http",
+					"auth": {},
+					"host": [
+						"localhost"
+					],
+					"port": "3367",
+					"path": [
+						"api",
+						"Products"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "Id eq 2",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Filterisanje po Id-u"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3367/api/Products?$filter=ProductCategory/Id eq 2",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3367/api/Products?$filter=ProductCategory/Id eq 2",
+					"protocol": "http",
+					"auth": {},
+					"host": [
+						"localhost"
+					],
+					"port": "3367",
+					"path": [
+						"api",
+						"Products"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "ProductCategory/Id eq 2",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Kada smo na serveru vec inkludovali prilikom upita."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3367/api/Products?$expand=ProductCategory&$filter=ProductCategory/Id eq 2",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3367/api/Products?$expand=ProductCategory&$filter=ProductCategory/Id eq 2",
+					"protocol": "http",
+					"auth": {},
+					"host": [
+						"localhost"
+					],
+					"port": "3367",
+					"path": [
+						"api",
+						"Products"
+					],
+					"query": [
+						{
+							"key": "$expand",
+							"value": "ProductCategory",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "$filter",
+							"value": "ProductCategory/Id eq 2",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Kada sa frontenda expandujemo."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3367/api/Products?$top=2&$skip=1&$orderby=Price desc",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3367/api/Products?$top=2&$skip=1&$orderby=Price desc",
+					"protocol": "http",
+					"auth": {},
+					"host": [
+						"localhost"
+					],
+					"port": "3367",
+					"path": [
+						"api",
+						"Products"
+					],
+					"query": [
+						{
+							"key": "$top",
+							"value": "2",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "$skip",
+							"value": "1",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "$orderby",
+							"value": "Price desc",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Paginacija."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3367/api/Products?$filter=Name eq 'Product 2'",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3367/api/Products?$filter=Name eq 'Product 2'",
+					"protocol": "http",
+					"auth": {},
+					"host": [
+						"localhost"
+					],
+					"port": "3367",
+					"path": [
+						"api",
+						"Products"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "Name eq 'Product 2'",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "String pod navodnike."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3367/api/Products?$filter=Name eq 'Product 2' and Price gt 15",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3367/api/Products?$filter=Name eq 'Product 2' and Price gt 15",
+					"protocol": "http",
+					"auth": {},
+					"host": [
+						"localhost"
+					],
+					"port": "3367",
+					"path": [
+						"api",
+						"Products"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "Name eq 'Product 2' and Price gt 15",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Filtriranje po vise obelezja"
+			},
+			"response": []
+		}
+	]
+}
