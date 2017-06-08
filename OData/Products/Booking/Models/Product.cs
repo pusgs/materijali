@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Newtonsoft.Json;
 
 namespace Booking.Models
 {
@@ -10,6 +11,8 @@ namespace Booking.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
+
+        [JsonIgnore]
         public ProductCategory ProductCategory { get; set; }
     }
 }

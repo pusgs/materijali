@@ -8,6 +8,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using System.Web.Http.OData;
 using Booking.Models;
 using Booking.Models.Context;
 
@@ -18,6 +19,7 @@ namespace Booking.Controllers
         private ProductsContext db = new ProductsContext();
 
         // GET: api/ProductsWA
+        [EnableQuery]
         public IQueryable<Product> GetProducts()
         {
             return db.Products;
