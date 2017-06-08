@@ -15,7 +15,10 @@ export class ProductComponent implements OnInit {
   constructor(private httpProductService: HttpProductService) { }
 
   ngOnInit() {
-    this.httpProductService.getProducts().subscribe((res: Response) => {this.products = res.json(); console.log(this.products)});
+    this.httpProductService.getProducts().subscribe(
+      (prod: any) => {this.products = prod; console.log(this.products)},//You can set the type to Product.
+      error => {alert("Unsuccessful fetch operation!"); console.log(error);}
+    );
   }
 
   addProduct() : void{
