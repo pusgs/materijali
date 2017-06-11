@@ -1,0 +1,28 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">{{title}}</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <h3>Fakultet tehničkih nauka</h3>
+
+  <div style="width:50%; margin: 0 auto">
+    <map [mapInfo]="mapInfo"></map>
+  </div>
+
+  <p>Kliknuti na logo FTN-a za prikaz detalja!</p>
+
+  <p>
+    Aplikacija koristi <a href="https://angular-maps.com/">Angular Google Maps (AGM) modul</a>.
+    <br/>
+    Instaliranje modula u okviru projekta se radi pomoću: <span style="color:#2a9fd6">npm install @agm/core --save</span> komande.
+  </p>
+
+</div>
+
