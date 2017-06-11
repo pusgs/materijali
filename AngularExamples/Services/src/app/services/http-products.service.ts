@@ -6,9 +6,6 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class HttpProductService{
 
-    data: any;
-
-
     constructor (private http: Http){
 
     }
@@ -37,5 +34,5 @@ export class HttpProductService{
             Name: 'Product from front-end',
             Price: 15
         }), opts);
-  }
+    }
 }

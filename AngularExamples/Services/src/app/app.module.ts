@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, JsonpModule } from '@angular/http';
 
 import { SimpleData } from "./services/simple-data.service"
 
@@ -10,19 +10,24 @@ import { SimpleComponent } from './simple/simple.component';
 import { Simple2Component } from './simple2/simple2.component';
 import { ProductComponent } from './product/product.component';
 
+import { NotificationService } from './services/notification.service';
+import { NotificationsComponent } from './notifications/notifications.component'
+
 @NgModule({
   declarations: [
     AppComponent,
     SimpleComponent,
     Simple2Component,
-    ProductComponent
+    ProductComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    JsonpModule
   ],
-  providers: [SimpleData],
+  providers: [SimpleData, NotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

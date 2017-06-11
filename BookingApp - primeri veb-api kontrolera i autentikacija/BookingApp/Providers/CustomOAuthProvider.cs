@@ -60,6 +60,8 @@ namespace BookingApp.Providers
                 context.OwinContext.Response.Headers.Add("Role", new[] { "User" });
             }
 
+            //Mora se dodati u header response-a kako bi se se Role atribut
+            //mogao procitati na klijentskoj strani
             context.OwinContext.Response.Headers.Add("Access-Control-Expose-Headers", new [] {"Role"});
 
             //if (!user.EmailConfirmed)

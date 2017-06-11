@@ -17,7 +17,7 @@ import { AgmCoreModule } from '@agm/core';
     BrowserModule,
     FormsModule,
     HttpModule,
-    //prilikom importa mape dajemo Google API key koji dobijamo preko google konzole
+    //prilikom import-a mape prosleđujemo Google API key koji dobijamo preko google konzole
     AgmCoreModule.forRoot({apiKey: 'AIzaSyDnihJyw_34z5S1KZXp90pfTGAqhFszNJk'})
   ],
   providers: [],
