@@ -15,7 +15,7 @@ namespace BookingApp.Controllers
         public IHttpActionResult Post()
         {
             NotificationHub.Notify(++ClickCount);
-            return Ok();
+            return Ok("Hello");
         }
    
     }

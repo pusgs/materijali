@@ -12,7 +12,7 @@ export class HttpClickService{
 
     click(): Observable<any> {
         const headers: Headers = new Headers();
-
+        headers.append("Accept", "text/plain")
         const opts: RequestOptions = new RequestOptions();
         opts.headers = headers;
         

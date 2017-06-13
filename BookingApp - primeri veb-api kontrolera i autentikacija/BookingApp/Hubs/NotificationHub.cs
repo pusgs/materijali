@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Web;
 using System.Web.UI;
 using Microsoft.AspNet.SignalR;
@@ -14,6 +15,7 @@ namespace BookingApp.Hubs
     public class NotificationHub : Hub
     {
         private static IHubContext hubContext = GlobalHost.ConnectionManager.GetHubContext<NotificationHub>();
+        private static Timer t = new Timer();
 
         public void Hello()
         {
@@ -22,7 +24,29 @@ namespace BookingApp.Hubs
 
         public static void Notify(int clickCount)
         {
-            hubContext.Clients.Group("Admins").clickNotification($"Kliknuto je: {clickCount} puta");
+            hubContext.Clients.Group("Admins").clickNotification($"Clicks: {clickCount}");
+        }
+
+        public void GetTime()
+        {
+            Clients.All.setRealTime(DateTime.Now.ToString("h:mm:ss tt"));
+        }
+
+        public void TimeServerUpdates()
+        {
+            t.Interval = 1000;
+            t.Start();
+            t.Elapsed += OnTimedEvent;
+        }
+
+        private void OnTimedEvent(object source, ElapsedEventArgs e)
+        {
+            GetTime();
+        }
+
+        public void StopTimeServerUpdates()
+        {
+            t.Stop();   
         }
 
         public override Task OnConnected()
@@ -32,10 +56,10 @@ namespace BookingApp.Hubs
 
             Groups.Add(Context.ConnectionId, "Admins");
 
-            if (Context.User.IsInRole("Admin"))
-            {
-                
-            }
+            //if (Context.User.IsInRole("Admin"))
+            //{
+            //    Groups.Add(Context.ConnectionId, "Admins");
+            //}
 
             return base.OnConnected();
         }
@@ -44,10 +68,11 @@ namespace BookingApp.Hubs
         {
             Groups.Remove(Context.ConnectionId, "Admins");
 
-            if (Context.User.IsInRole("Admin"))
-            {
-                
-            }
+            //if (Context.User.IsInRole("Admin"))
+            //{
+            //    Groups.Remove(Context.ConnectionId, "Admins");
+            //}
+
             return base.OnDisconnected(stopCalled);
         }
     }

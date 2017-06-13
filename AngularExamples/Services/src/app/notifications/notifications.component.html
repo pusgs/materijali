@@ -1,3 +1,11 @@
+<h1>Current Time</h1>
+<button (click) = "startTimer()">Start Timer</button>
+<button (click) = "stopTimer()">Stop Timer</button>
+
+<div *ngIf="time">
+  <h3>{{time}}</h3>
+</div>
+
 <h1> Notifications </h1>
 
 <button (click) = "onClick()">Click</button>
